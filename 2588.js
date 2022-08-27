@@ -1,5 +1,5 @@
-const fs = require('fs');
-let input = fs.readFileSync('./2588.txt').toString();
+const fs = require('fs')
+let input = fs.readFileSync('./2588.txt').toString()
 let arr = input.split("\n")
 
 let num1 = arr[0];

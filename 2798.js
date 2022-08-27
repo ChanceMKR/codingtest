@@ -1,21 +1,26 @@
-const fs = require('fs');
-let input = fs.readFileSync('./2798.txt').toString();
-let arr = input.split("\n")
-let arr1 = arr[0].split(" ")
-let card = arr[1].split(" ")
+const fs = require('fs')
+const input = fs.readFileSync('./2798.txt').toString().split("\n")
 
-let n = arr1[0]
-let m = arr1[1]
+const arr = input[0].split(" ")
+const card = input[1].split(" ")
 
-let sum
+const n = parseInt(arr[0])
+const m = parseInt(arr[1])
+
+let sum = 0
+let result = 0
+
 for(let i=0;i<n-2;i++){
     for(let j=i+1;j<n-1;j++){
-        for(let k=i+2;k<n;k++)
-            sum = card[i] + card[j] + card(k)
-            if(sum>=m){
-                
+        for(let k=j+1;k<n;k++){
+            sum = parseInt(card[i]) + parseInt(card[j]) + parseInt(card[k])
+            if(sum>m){
+                continue;
+            }else{
+                if(sum>result) result = sum;                  
             }
+        }
     }
 }
-
-console.log(n);
+//break 조건
+console.log(result)
